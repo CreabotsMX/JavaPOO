@@ -1,2 +1,2 @@
 # JavaPOO
-Clases que se realizan el curso de Java POO
+Clases que se realizan para el curso de Java POO
