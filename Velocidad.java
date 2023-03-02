@@ -1,11 +1,11 @@
-
 public class Velocidad
 {
-    // instance variables - replace the example below with your own
+    //Atributos   
     private float velocidad;
     private float distancia;
     private float tiempo;
-
+    
+    //Constructor
     public Velocidad()
     {
         distancia = 0;
@@ -35,6 +35,12 @@ public class Velocidad
         distancia = d;
         calcularVelocidad();
     }
+    
+    public void setDistanciaM(float d)
+    {
+        distancia = d / 1000;
+        calcularVelocidad();
+    }    
 
     public void setTiempoMin(float t)
     {
@@ -53,6 +59,5 @@ public class Velocidad
     {
         velocidad = distancia / tiempo;
     }
-    
     
 }
