@@ -1,26 +1,47 @@
+
+
 public class Cuadrado
 {
     //Atributos
     private float lado;
     private float perimetro;
     private float area;
-
+    
     //Constructor
     public Cuadrado()
     {
         // initialise instance variables
-        lado = 1;
-        calcularPerimetro();
-        calcularArea();
+        setLado(1);
     }
-     
-    //Getters
+    
+    public Cuadrado(float l)
+    {
+        setLado(l);
+
+    }
+
+    //Metodos
+    public void setLado(float l)
+    {
+        if(l <= 0)
+        {
+            lado = 1;
+        }
+        
+        else
+        {
+            lado = l;
+            calcularPerimetro();
+            calcularArea();
+        }
+    }
+    
     public float getLado()
     {
         return lado;
     }
     
-    public float getPerimetro()
+    public float getPeriometro()
     {
         return perimetro;
     }
@@ -30,22 +51,13 @@ public class Cuadrado
         return area;
     }
     
-    //Setters
-    public void setLado(float l)
-    {
-        lado = l;
-        calcularPerimetro();
-        calcularArea();
-    }
-    
-    //Otros metodos
     private void calcularPerimetro()
     {
-        perimetro = 4 * lado;        
+        perimetro = 4*lado;
     }
     
     private void calcularArea()
     {
-        area = lado * lado;        
-    }    
+        area = lado*lado;
+    }
 }
