@@ -1,13 +1,10 @@
-
-public class Rectangulo
+public class Rectangulo extends FigurasGeometricas
 {
+    //Atributos
+    private double base;
+    private double altura;
     
-    private float base;
-    private float altura;
-    private float perimetro;
-    private float area; 
-
-    public Rectangulo()
+    Rectangulo()
     {
         base = 1;
         altura = 1;
@@ -15,50 +12,58 @@ public class Rectangulo
         calcularArea();
     }
     
+    Rectangulo(double b, double h)
+    {
+        base = b;
+        altura = h;
+        calcularPerimetro();
+        calcularArea();        
+    }
+    
     //Getters
-    public float getBase()
+    public double getBase()
     {
         return base;
     }
-
-    public float getAltura()
+    
+    public double getAltura()
     {
         return altura;
     }
-
-    public float getPerimetro()
+    
+    //Setter
+    public void setBase(double b)
     {
-        return perimetro;
+        if (b > 0)
+            base = b;
+        
+        if(base > 0 && altura > 0)
+        {
+            calcularPerimetro();
+            calcularArea();
+        }
     }
-
-    public float getArea()
+    
+    public void setAltura(double h)
     {
-        return area;
+        if(h > 0)
+            altura = h;
+        
+        if(base > 0 && altura > 0)
+        {
+            calcularPerimetro();
+            calcularArea();
+        }
     }
-
-    //Setters
-    public void setBase(float b)
-    {
-        base = b;
-        calcularPerimetro();
-        calcularArea();
-    }
-
-    public void setAltura(float h)
-    {
-        altura = h;
-        calcularPerimetro();
-        calcularArea();
-    }        
-
-    //Otros
+    
     private void calcularPerimetro()
     {
-        perimetro = (base + altura) * 2;        
+        setPerimetro((2*base)+(2*altura));
     }
-
-    private float calcularArea()
+    
+    private void calcularArea()
     {
-        area = base * altura;
+        setArea(base+altura);
     }
+    
 }

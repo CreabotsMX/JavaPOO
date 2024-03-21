@@ -1,25 +1,72 @@
 import java.util.Scanner;
 
-public class Main
+public class Main 
 {
-    public static void main(String [] args)
+    public static void main(String[] args) 
     {
-        Scanner sc = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in); 
         
-        Cuadrado  cuadrado1 = new Cuadrado();       
-        System.out.print("Introduce el lado del cuadrado: ");
-        float l = sc.nextFloat();
-        cuadrado1.setLado(l);
-        System.out.println("Para un cuadrado de lado " + cuadrado1.getLado() + " el P = " + cuadrado1.getPerimetro() + " y el A = " + cuadrado1.getArea());
+        System.out.println("Programa que calcula perimetro y area de diferentes figuras geometricas");
+        byte opcion;
         
-        Rectangulo  rectangulo1 = new Rectangulo();       
-        System.out.print("Introduce la base del rectangulo: ");
-        float b = sc.nextFloat();
-        rectangulo1.setBase(b);
-        System.out.print("Introduce la altura del rectangulo: ");
-        float h = sc.nextFloat();
-        rectangulo1.setAltura(h);       
-        System.out.println("Para un rectangulo de base " + rectangulo1.getBase() + " y altura " + rectangulo1.getAltura() + " el P = " + rectangulo1.getPerimetro() + " y el A = " + rectangulo1.getArea());
-        
+        do
+        {    
+            mostrarMenuPrincipal();
+            System.out.print("Ingresa una opcion: ");
+            opcion = scanner.nextByte();
+            
+            switch(opcion)
+            {
+                case 1:
+                    System.out.print("Lado: ");
+                    float lado = scanner.nextFloat();
+                    Cuadrado cuadrado = new Cuadrado(lado);
+                    System.out.println(cuadrado.getResultado());
+                    break;
+                
+                case 2:
+                    System.out.print("Base: ");
+                    float base = scanner.nextFloat();
+                    System.out.print("Altura: ");
+                    float altura = scanner.nextFloat();
+                    Rectangulo rectangulo = new Rectangulo(base, altura);
+                    System.out.println(rectangulo.getResultado());
+                    break;
+
+                case 3:
+
+                    break;
+
+                case 4:
+
+                    break;
+                    
+                case 5:
+                    System.out.println("Hasta luego");
+                    break;
+                    
+                default:
+                    System.out.println("Ingresa una opcion valida.");
+            }
+            
+            if(opcion != 5)
+            {
+                System.out.println("Presiona enter para continuar...");
+                scanner.nextLine(); // Limpiar el buffer del scanner
+                scanner.nextLine(); // Esperar la pulsación de Enter
+            }
+            
+        }while(opcion != 5);
     }
+    
+    private static void mostrarMenuPrincipal()
+    {
+        System.out.println("\nMENU");
+        System.out.println("1.Cuadrado");
+        System.out.println("2.Rectangulo");
+        System.out.println("3.Triangulo");
+        System.out.println("4.Circulo");
+        System.out.println("5.Salir");
+    }   
+
 }

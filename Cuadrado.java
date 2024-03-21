@@ -1,63 +1,52 @@
-
-
-public class Cuadrado
+public class Cuadrado extends FigurasGeometricas 
 {
     //Atributos
-    private float lado;
-    private float perimetro;
-    private float area;
-    
-    //Constructor
-    public Cuadrado()
-    {
-        // initialise instance variables
-        setLado(1);
-    }
-    
-    public Cuadrado(float l)
-    {
-        setLado(l);
-
-    }
+    private double lado;
 
     //Metodos
-    public void setLado(float l)
+    
+    //Constructores
+    Cuadrado()
     {
-        if(l <= 0)
-        {
-            lado = 1;
-        }
-        
-        else
-        {
-            lado = l;
-            calcularPerimetro();
-            calcularArea();
-        }
+        setLado(1);        
     }
     
-    public float getLado()
+    Cuadrado(double l)
+    {
+        setLado(l);
+    }
+    
+    //Getters
+    public double getLado()
     {
         return lado;
     }
     
-    public float getPeriometro()
-    {
-        return perimetro;
+    @Override
+    public void setResultado()
+    {      
+        setResultado("P = " + getPerimetro() + " A = " + getArea());       
     }
     
-    public float getArea()
+    //Setters
+    public void setLado(double l)
     {
-        return area;
+        if(l > 0)
+        {
+            lado = l; 
+            calcularPerimetro();
+            calcularArea();
+        }  
     }
     
+    //Otros
     private void calcularPerimetro()
     {
-        perimetro = 4*lado;
+        setPerimetro(4 * lado);
     }
     
     private void calcularArea()
     {
-        area = lado*lado;
-    }
+        setArea(lado * lado);
+    }    
 }
