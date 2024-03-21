@@ -6,6 +6,7 @@ public class FigurasGeometricas
     private String resultado;
    
     //Metodos
+
     //Constructores
     FigurasGeometricas()
     {     
@@ -29,15 +30,14 @@ public class FigurasGeometricas
     }
     
     //Setters
-    public void setPerimetro(double p)
+    protected void setPerimetro(double p)
     {
         perimetro = p;
     }
 
-    public void setArea(double a)
+    protected void setArea(double a)
     {
         area = a;
     }
-
   
 }
