@@ -22,12 +22,6 @@ public class Cuadrado extends FigurasGeometricas
         return lado;
     }
     
-    @Override
-    public void setResultado()
-    {      
-        setResultado("P = " + getPerimetro() + " A = " + getArea());       
-    }
-    
     //Setters
     public void setLado(double l)
     {
@@ -39,7 +33,8 @@ public class Cuadrado extends FigurasGeometricas
         }  
     }
     
-    //Otros
+  
+    //Others
     private void calcularPerimetro()
     {
         setPerimetro(4 * lado);

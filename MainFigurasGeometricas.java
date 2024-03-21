@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 public class Main 
 {
     public static void main(String[] args) 
@@ -21,7 +22,7 @@ public class Main
                     System.out.print("Lado: ");
                     float lado = scanner.nextFloat();
                     Cuadrado cuadrado = new Cuadrado(lado);
-                    System.out.println(cuadrado.getResultado());
+                    System.out.println(cuadrado.getResultados());
                     break;
                 
                 case 2:
@@ -30,17 +31,12 @@ public class Main
                     System.out.print("Altura: ");
                     float altura = scanner.nextFloat();
                     Rectangulo rectangulo = new Rectangulo(base, altura);
-                    System.out.println(rectangulo.getResultado());
+                    System.out.println(rectangulo.getResultados());
                     break;
-
                 case 3:
-
                     break;
-
                 case 4:
-
                     break;
-                    
                 case 5:
                     System.out.println("Hasta luego");
                     break;
@@ -57,6 +53,8 @@ public class Main
             }
             
         }while(opcion != 5);
+        
+        scanner.close();
     }
     
     private static void mostrarMenuPrincipal()
@@ -67,6 +65,7 @@ public class Main
         System.out.println("3.Triangulo");
         System.out.println("4.Circulo");
         System.out.println("5.Salir");
-    }   
-
+    }
+   
+    
 }
