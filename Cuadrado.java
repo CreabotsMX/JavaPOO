@@ -8,7 +8,7 @@ public class Cuadrado extends FigurasGeometricas
     //Constructores
     Cuadrado()
     {
-        setLado(1);        
+        setLado(0);        
     }
     
     Cuadrado(double l)
@@ -43,5 +43,10 @@ public class Cuadrado extends FigurasGeometricas
     private void calcularArea()
     {
         setArea(lado * lado);
-    }    
+    }
+    
+        public String toString()
+    {
+        return "P = " + getPerimetro() + " A = " + getArea();
+    }
 }

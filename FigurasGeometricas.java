@@ -1,15 +1,16 @@
+
 public class FigurasGeometricas
 {
     //Atributos
     private double perimetro;
     private double area;
-    private String resultado;
    
     //Metodos
     //Constructores
     FigurasGeometricas()
     {       
-        resultado = "Ingresa los valores";
+        setPerimetro(0);
+        setArea(0);
     }
     
     //Getters
@@ -21,11 +22,6 @@ public class FigurasGeometricas
     public double getArea()
     {
         return area;
-    }
-    
-    public String getResultados()
-    {      
-        return resultado = "P = " + getPerimetro() + "\nA = " + getArea();       
     }
     
     //Setters
