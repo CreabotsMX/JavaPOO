@@ -36,10 +36,8 @@ public class IMC
         return imc;
     }
     
-    public void getClasificacion()
-    {
-        String mensaje = "";
-        
+    public String getClasificacion()
+    {        
         if(imc < 18.5)
         {
             clasificacion = "Desnutricion";
@@ -60,6 +58,7 @@ public class IMC
             clasificacion =  "Obesidad grado 1";
         }
         
+        return clasificacion;
     }
     
     //Setters
